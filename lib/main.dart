@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShadcnApp(
       debugShowCheckedModeBanner: false,
-      title: 'My App',
+      title: 'Code Snippets',
       home: const HomeScreen(),
       theme: ThemeData(
         colorScheme: ColorSchemes.darkZinc(),

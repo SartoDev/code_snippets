@@ -124,12 +124,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return Center(
-          child: SizedBox(
-            width: kIsWeb ? 600 : constraints.maxWidth,
-            child: shadcn.Scaffold(
-              headers: [
-                shadcn.AppBar(
+        return shadcn.Scaffold(
+          headers: [
+            Center(
+              child: SizedBox(
+                width: kIsWeb ? 600 : constraints.maxWidth,
+                child: shadcn.AppBar(
                   title:
                       searchCommand
                           ? shadcn.TextField(
@@ -199,7 +199,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                   ],
                 ),
-              ],
+              ),
+            ),
+          ],
+          child: Center(
+            child: SizedBox(
+              width: kIsWeb ? 600 : constraints.maxWidth,
               child: ListView(
                 padding: EdgeInsets.symmetric(
                   horizontal: constraints.maxWidth * 0.05,
