@@ -25,7 +25,7 @@ Aplicação web e desktop desenvolvida em <a href="https://flutter.dev" rel="nof
    ```bash
    $ flutter pub get
    ```
-4. Inicie o servidor de desenvolvimento:
+4. Inicie a aplicação:
    ```bash
    $ flutter run
    ```
