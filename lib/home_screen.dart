@@ -16,49 +16,42 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool searchCommand = false;
-  final _oracleCommands = [
-    Command(
-      expandedValue: "Estabelece uma conexão com servidor remoto da Oracle",
-      headerValue:
-          'ssh -i "C:\\Users\\Administrador\\Downloads\\oracle_server\\ssh-key-2024-12-04.key" ubuntu@168.75.94.9',
-    ),
-  ];
   final _gitCommands = [
     Command(
-      expandedValue: "Inicializa um repositório Git.",
+      expandedValue: "Inicializa um repositório Git",
       headerValue: "git init",
     ),
     Command(
-      expandedValue: "Clona um repositório remoto.",
+      expandedValue: "Clona um repositório remoto",
       headerValue: "git clone <url>",
     ),
     Command(
-      expandedValue: "Adiciona todos os arquivos ao staging.",
+      expandedValue: "Adiciona todos os arquivos ao staging",
       headerValue: "git add .",
     ),
     Command(
       expandedValue:
-          'Exibe o histórico de commits (Pressione Enter para pular a linha. Digite "q" para sair do log e voltar ao terminal).',
+          'Exibe o histórico de commits (Pressione Enter para pular a linha. Digite "q" para sair do log e voltar ao terminal)',
       headerValue: "git log",
     ),
     Command(
-      expandedValue: "Mostra o status atual do repositório.",
+      expandedValue: "Mostra o status atual do repositório",
       headerValue: "git status",
     ),
     Command(
-      expandedValue: "Salva as alterações no repositório local.",
+      expandedValue: "Salva as alterações no repositório local",
       headerValue: 'git commit -m "Mensagem"',
     ),
     Command(
-      expandedValue: "Modifica a mensagem do último commit.",
+      expandedValue: "Modifica a mensagem do último commit",
       headerValue: 'git commit --amend -m "Nova Mensagem"',
     ),
     Command(
-      expandedValue: "Define o nome do usuário nos commits globalmente.",
+      expandedValue: "Define o nome do usuário nos commits globalmente",
       headerValue: 'git config --global user.name "Seu Nome"',
     ),
     Command(
-      expandedValue: "Define o email do usuário nos commits globalmente.",
+      expandedValue: "Define o email do usuário nos commits globalmente",
       headerValue: 'git config --global user.email "seuemail@example.com"',
     ),
   ];
@@ -72,50 +65,147 @@ class _HomeScreenState extends State<HomeScreen> {
       headerValue: "pip freeze",
     ),
     Command(
-      expandedValue: "Inicia o servidor de desenvolvimento Django.",
+      expandedValue: "Inicia o servidor de desenvolvimento Django",
       headerValue: "python manage.py runserver",
     ),
     Command(
-      expandedValue: "Cria um super usuário.",
+      expandedValue: "Cria um super usuário",
       headerValue: "python manage.py createsuperuser",
     ),
     Command(
       expandedValue:
-          "Cria arquivos de migração para refletir alterações nos modelos do Django para as entidades do banco de dados.",
+          "Cria arquivos de migração para refletir alterações nos modelos do Django para as entidades do banco de dados",
       headerValue: "python manage.py makemigrations",
     ),
     Command(
-      expandedValue: "Aplica os arquivos de migração.",
+      expandedValue: "Aplica os arquivos de migração",
       headerValue: "python manage.py migrate",
     ),
     Command(
-      expandedValue: "Cadastrar registros iniciais no banco de dados.",
+      expandedValue: "Cadastrar registros iniciais no banco de dados",
       headerValue: 'python manage.py loaddata "fixtures\\data.json"',
     ),
     Command(
-      expandedValue: "Cria um novo ambiente virtual Python.",
+      expandedValue: "Cria um novo ambiente virtual Python",
       headerValue: "python -m venv venv",
     ),
     Command(
-      expandedValue: "Sai do ambiente virtual atual.",
+      expandedValue: "Sai do ambiente virtual atual",
       headerValue: "deactivate",
     ),
     Command(
-      expandedValue: "Ativa o ambiente virtual Python.",
+      expandedValue: "Ativa o ambiente virtual Python",
       headerValue: 'workon "nome_do_ambiente"',
-    ),
-  ];
-  final _chromeCommands = [
-    Command(
-      expandedValue: "Rodar Chrome sem Cors",
-      headerValue:
-          '"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" --disable-web-security --user-data-dir="C:\chrome_dev"',
     ),
   ];
   final _nodeCommands = [
     Command(
+      expandedValue: "Executa um arquivo Javascript com Node.js",
+      headerValue: 'node <arquivo.js>',
+    ),
+    Command(
+      expandedValue: "Mostra a versão do Node.js",
+      headerValue: 'node -v',
+    ),
+  ];
+  final _npmCommands = [
+    Command(
+      expandedValue: "Inicializa um projeto node, criando um package.json",
+      headerValue: 'npm init',
+    ),
+    Command(
       expandedValue: "Instala pacotes do package.json",
       headerValue: 'npm install',
+    ),
+    Command(
+      expandedValue: "Instala um pacote no projeto",
+      headerValue: 'npm install <pacote>',
+    ),
+    Command(
+      expandedValue: "Instala um pacote globalmente",
+      headerValue: 'npm install -g <pacote>',
+    ),
+    Command(
+      expandedValue: "Atualiza os pacotes do projeto",
+      headerValue: 'npm update',
+    ),
+    Command(
+      expandedValue: "Remove um pacote",
+      headerValue: 'npm uninstall <pacote>',
+    ),
+    Command(
+      expandedValue: "Executa um script definido no package.json",
+      headerValue: 'npm run <script>',
+    ),
+    Command(
+      expandedValue: "Lista os pacotes instalados no projeto",
+      headerValue: 'npm list',
+    ),
+  ];
+  final _flutterCommands = [
+    Command(
+      expandedValue: "Verifica o ambiente de desenvolvimento e dependências",
+      headerValue: 'flutter doctor',
+    ),
+    Command(
+      expandedValue: "Cria um novo projeto Flutter",
+      headerValue: 'flutter create <nome_do_projeto>',
+    ),
+    Command(
+      expandedValue: "Baixa as dependências do projeto",
+      headerValue: 'flutter pub get',
+    ),
+    Command(
+      expandedValue: "Atualiza as dependências para a versão mais recente",
+      headerValue: 'flutter pub upgrade',
+    ),
+    Command(
+      expandedValue: "Executa o aplicativo em um dispositivo/emulador conectado",
+      headerValue: 'flutter run',
+    ),
+    Command(
+      expandedValue: "Executa testes automatizados do projeto",
+      headerValue: 'flutter test',
+    ),
+    Command(
+      expandedValue: "Remove arquivos temporários e recompila o projeto",
+      headerValue: 'flutter clean',
+    ),
+    Command(
+      expandedValue: "Adiciona um pacote ao projeto",
+      headerValue: 'flutter pub add <pacote>',
+    ),
+    Command(
+      expandedValue: "Remove um pacote do projeto",
+      headerValue: 'flutter pub remove <pacote>',
+    ),
+    Command(
+      expandedValue: "Gera um APK para Android",
+      headerValue: 'flutter build apk',
+    ),
+    Command(
+      expandedValue: "Gera um App Bundle para Android",
+      headerValue: 'flutter build appbundle',
+    ),
+    Command(
+      expandedValue: "Compila o app para iOS",
+      headerValue: 'flutter build ios',
+    ),
+    Command(
+      expandedValue: "Gera a versão para web",
+      headerValue: 'flutter build web',
+    ),
+    Command(
+      expandedValue: "Gera a versão para windows",
+      headerValue: 'flutter build windows',
+    ),
+    Command(
+      expandedValue: "Lista dispositivos/emuladores disponíveis",
+      headerValue: 'flutter devices',
+    ),
+    Command(
+      expandedValue: "Lista os emuladores disponíveis",
+      headerValue: 'flutter emulators',
     ),
   ];
   List<Command> _searchedCommands = [];
@@ -136,11 +226,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             placeholder: Text("Procure por um comando..."),
                             onChanged: (value) {
                               final allCommands = [
-                                ..._oracleCommands,
                                 ..._gitCommands,
+                                ..._npmCommands,
                                 ..._nodeCommands,
                                 ..._pythonCommands,
-                                ..._chromeCommands,
+                                ..._flutterCommands,
                               ];
                               setState(() {
                                 _searchedCommands =
@@ -159,11 +249,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed:
                           () => setState(() {
                             final allCommands = [
-                              ..._oracleCommands,
                               ..._gitCommands,
+                              ..._npmCommands,
                               ..._nodeCommands,
                               ..._pythonCommands,
-                              ..._chromeCommands,
+                              ..._flutterCommands,
                             ];
                             searchCommand = !searchCommand;
                             _searchedCommands = allCommands;
@@ -245,6 +335,21 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                           SizedBox(height: 20),
+                          Text("Comandos npm"),
+                          SizedBox(height: 10),
+                          ListView.separated(
+                            physics: NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: _npmCommands.length,
+                            separatorBuilder:
+                                (context, index) => SizedBox(height: 20),
+                            itemBuilder: (context, index) {
+                              final command = _npmCommands[index];
+
+                              return CommandView(command);
+                            },
+                          ),
+                          SizedBox(height: 20),
                           Text("Comandos node"),
                           SizedBox(height: 10),
                           ListView.separated(
@@ -275,31 +380,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           ),
                           SizedBox(height: 20),
-                          Text("Comandos conexão Oracle"),
+                          Text("Comandos Flutter"),
                           SizedBox(height: 10),
                           ListView.separated(
                             physics: NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            itemCount: _oracleCommands.length,
+                            itemCount: _flutterCommands.length,
                             separatorBuilder:
                                 (context, index) => SizedBox(height: 20),
                             itemBuilder: (context, index) {
-                              final command = _oracleCommands[index];
-
-                              return CommandView(command);
-                            },
-                          ),
-                          SizedBox(height: 20),
-                          Text("Comandos Chrome"),
-                          SizedBox(height: 10),
-                          ListView.separated(
-                            physics: NeverScrollableScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: _chromeCommands.length,
-                            separatorBuilder:
-                                (context, index) => SizedBox(height: 20),
-                            itemBuilder: (context, index) {
-                              final command = _chromeCommands[index];
+                              final command = _flutterCommands[index];
 
                               return CommandView(command);
                             },
